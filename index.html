@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anubhav Singh</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="main-container">
+      <!-- -------------LOADING ANIMATION CODE----------------- -->
+
+      <div class="loader-wrapper">
+        <div class="left-screen"></div>
+        <div class="right-screen"></div>
+        <div class="loading-logo">
+          <img src="./Assests/logo-black.png" alt="" />
+        </div>
+      </div>
+
+      <!-- ------------------CUSTOM CURSOR CODE----------------- -->
+
+      <div class="cursor">
+        <i class="fa-solid fa-arrow-right"></i>
+      </div>
+
+      <!-- ------------------NAVBAR CODE----------------- -->
+
+      <nav>
+        <div class="nav-logo">
+          <img src="./Assests/logo-white.png" alt="" />
+        </div>
+        <ul>
+          <li><a href="./HTML_Files/about.html">About</a></li>
+          <li><a href="./HTML_Files/project.html">Project</a></li>
+          <li><a href="./HTML_Files/contactMe.html">Contact Me</a></li>
+          <a href="#" class="mail-btn">Hello@Anubhav</a>
+        </ul>
+      </nav>
+
+      <!-- ------------------NAVBAR CODE----------------- -->
+
+      <!-- ------------------HERO BOX CODE----------------- -->
+      <div class="herobox" id="#hero-box">
+        <div class="intro">
+          <a href="#">😃, my name is a Anubhav and i am a Freelance</a>
+        </div>
+        <div class="passion1">
+          <a href="#">Webdesigner</a>
+        </div>
+        <div class="passion2">
+          <a href="#">& Developer</a>
+        </div>
+        <div class="hero-box-img">
+          <img src="./Assests/img-boy.png" alt="" />
+        </div>
+        <div class="passion1_outline">
+          <a href="#">Webdesigner</a>
+        </div>
+        <div class="passion2_outline">
+          <a href="#">& Developer</a>
+        </div>
+        <p>based in India.</p>
+
+        <div class="btn-container">
+          <div class="designer-btn">
+            <button class="c-button c-button--gooey">
+              You need a designer
+              <div class="c-button__blobs">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              version="1.1"
+              style="display: block; height: 0; width: 0"
+            >
+              <defs>
+                <filter id="goo">
+                  <feGaussianBlur
+                    in="SourceGraphic"
+                    stdDeviation="10"
+                    result="blur"
+                  ></feGaussianBlur>
+                  <feColorMatrix
+                    in="blur"
+                    mode="matrix"
+                    values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                    result="goo"
+                  ></feColorMatrix>
+                  <feBlend in="SourceGraphic" in2="goo"></feBlend>
+                </filter>
+              </defs>
+            </svg>
+          </div>
+
+          <div class="developer-btn">
+            <button class="c-button c-button--gooey">
+              You need a developer
+              <div class="c-button__blobs">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              version="1.1"
+              style="display: block; height: 0; width: 0"
+            >
+              <defs>
+                <filter id="goo">
+                  <feGaussianBlur
+                    in="SourceGraphic"
+                    stdDeviation="10"
+                    result="blur"
+                  ></feGaussianBlur>
+                  <feColorMatrix
+                    in="blur"
+                    mode="matrix"
+                    values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                    result="goo"
+                  ></feColorMatrix>
+                  <feBlend in="SourceGraphic" in2="goo"></feBlend>
+                </filter>
+              </defs>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <!-- ------------------HERO BOX CODE----------------- -->
+
+      <!-- ---------------ABOUT_US --------------------------- -->
+      
+    <!-- CDN LINKS -->
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

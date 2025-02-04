@@ -1,0 +1,927 @@
+@font-face {
+  font-family: "font-1";
+  src: url("./Fonts/font-1.otf");
+}
+@font-face {
+  font-family: "font-2";
+  src: url("./Fonts/font-2.otf");
+}
+@font-face {
+  font-family: "font-3";
+  src: url("../Fonts/font-3.woff2");
+}
+@font-face {
+  font-family: "font-4";
+  src: url("../Fonts/font-4.woff2");
+}
+@font-face {
+  font-family: "font-5";
+  src: url("../Fonts/font-5.woff2");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
+body,
+html {
+  overflow-x: hidden;
+}
+hr {
+  width: 80%;
+  border: 2px solid #ccc;
+  margin: 20px auto;
+}
+
+#main-container {
+  background-image: url(../Assests/bg-main.png);
+}
+
+/* --------------NAVBAR CODE HERE------------------ */
+
+nav {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: font-1;
+  padding: 0 100px;
+  overflow: hidden;
+  position: fixed;
+  z-index: 10;
+  background: #EAEAEA;
+}
+
+.nav-logo {
+  width: 20%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-logo img {
+  width: 150%;
+  height: 150%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+nav ul li {
+  font-size: 17px;
+  background: transparent;
+  border: none;
+  padding: 1em 1.5em;
+  text-transform: uppercase;
+  position: relative;
+  transition: 0.5s ease;
+  cursor: pointer;
+  margin-right: 5px;
+  transition-delay: 0.9s ease;
+  border-radius: 10px;
+  height: 50px;
+}
+
+nav ul li::before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #030303;
+  transition: 0.5s ease;
+}
+nav ul li:hover a {
+  color: #1e1e2b;
+  transition-delay: 0.5s;
+}
+
+nav ul li:hover:before {
+  width: 100%;
+}
+nav ul li::after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color: #0c0c0c;
+  border-radius: 5px;
+  transition: 0.4s ease;
+  z-index: -1;
+}
+nav ul li:hover::after {
+  height: 100%;
+  transition-delay: 0.4s;
+  color: aliceblue;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: rgb(31, 31, 31);
+  font-size: 18px;
+  font-weight: 500;
+  transition-delay: 0.9s ease;
+}
+nav ul li:hover a {
+  color: white;
+}
+
+nav a.mail-btn {
+  display: inline-block;
+  width: 150px;
+  height: 50px;
+  background-color: black;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: white;
+  text-decoration: none;
+  border-radius: 7px;
+  transform-origin: center;
+  transition: 0.5s ease;
+}
+nav a.mail-btn:hover {
+  transform: scaleX(1.1);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.463);
+}
+
+/* MENU BTN CSS CODE */
+.menu-container {
+  margin-left: 20px;
+  display: none;
+}
+.menu-container  input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  display: none;
+}
+
+.container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
+}
+
+.checkmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 1.3em;
+  width: 1.5em;
+}
+
+.checkmark span {
+  width: 40px;
+  height: 3px;
+  background-color: rgb(2, 2, 2);
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+.checkmark span:nth-child(1) {
+  top: 10%;
+}
+
+.checkmark span:nth-child(2) {
+  top: 50%;
+}
+
+.checkmark span:nth-child(3) {
+  top: 90%;
+}
+
+.container input:checked + .checkmark span:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  -webkit-transform: translateY(-50%) rotate(45deg);
+  -moz-transform: translateY(-50%) rotate(45deg);
+  -ms-transform: translateY(-50%) rotate(45deg);
+  -o-transform: translateY(-50%) rotate(45deg);
+}
+
+.container input:checked + .checkmark span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+  -webkit-transform: translateY(-50%) rotate(-45deg);
+  -moz-transform: translateY(-50%) rotate(-45deg);
+  -ms-transform: translateY(-50%) rotate(-45deg);
+  -o-transform: translateY(-50%) rotate(-45deg);
+}
+
+.container input:checked + .checkmark span:nth-child(3) {
+  transform: translateX(-50px);
+  -webkit-transform: translateX(-50px);
+  -moz-transform: translateX(-50px);
+  -ms-transform: translateX(-50px);
+  -o-transform: translateX(-50px);
+  opacity: 0;
+}
+
+
+
+
+
+
+
+
+.about-us {
+  /* background-color: #f8f9f9; */
+}
+.top-box-intro {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  /* background-color: #f8f9f9; */
+  overflow: hidden;
+}
+.about-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 58vh;
+  z-index: 2;
+}
+.top-box-intro h1 {
+  font-family: font-3;
+  font-size: 28vw;
+  letter-spacing: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #171818;
+  background-image: url(https://cdn.pixabay.com/photo/2015/09/29/15/12/stars-964022_1280.png);
+  background-size: contain;
+  background-position: center;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+.cover-div {
+  height: 0vh;
+  width: 100vw;
+  position: absolute;
+  bottom: 0%;
+  background-image: url(../Assests/bg-main.png);
+  background-color: rgb(255, 255, 255);
+
+}
+.circle1 {
+  position: absolute;
+  top: 30%;
+  left: 150px;
+  font-family: font-4;
+  color: orange;
+}
+
+.circle2 {
+  height: 30vh;
+  width: 25vh;
+  position: relative;
+  top: 15%;
+  right: -130%;
+  background-image: url(../Assests/goku.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.circle3{
+  position: absolute;
+  background-color: #000;
+  top: 14%;
+  left: -20%;
+  height: 40vw;
+  width: 40vw;
+  border-radius: 50%;
+  background-image: url(../Assests/bg-main.png);
+  display: none;
+}
+.circle4{
+  position: absolute;
+  background-color: #000;
+  top: 78%;
+  bottom: 0;
+  right: -15%;
+  height: 40vw;
+  width: 40vw;
+  border-radius: 50%;
+  background-image: url(../Assests/bg-main.png);
+  display: none;
+}
+
+
+.second-page-details {
+  width: 100vw;
+  height: 100vh;
+  /* background-color: #f8f9f9; */
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0% 10%;
+  margin-top: -10vh;
+}
+
+.leftSide {
+  width: 30%;
+  /* background-color: rgb(228, 247, 228); */
+  border-radius: 20px;
+  margin-top: 15vh;
+  margin-right: 10vh;
+}
+.leftSide .imgBox {
+  overflow: hidden;
+  height: 70vh;
+  border-radius: 20px;
+  padding: 10px;
+}
+.leftSide .imgBox img {
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: contain;
+}
+
+.rightSide {
+  width: 70%;
+  height: 70vh;
+  margin-top: 15vh;
+  padding: 2%;
+}
+.rightSide .desc {
+  font-family: font-4;
+  letter-spacing: 2px;
+  line-height: 25px;
+  font-weight: 550;
+}
+
+.boxes {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 6vh;
+}
+.box-1 {
+  border: 1px solid black;
+  height: 25vh;
+  width: 25vh;
+  padding: 20px;
+  font-family: font-1;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.box-1 h3 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.tools-use {
+  margin-top: 4vh;
+}
+.tools-use p {
+  font-size: 1.5rem;
+  font-family: font-4;
+}
+
+.tool-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tool-box {
+  height: 8vh;
+  width: 8vh;
+  overflow: hidden;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-top: 2vh;
+  padding: 10px;
+  margin-right: 2vw;
+}
+.tool-box img {
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: contain;
+}
+
+.third-page {
+  height: 100vh;
+  width: 100%;
+  padding: 1% 10%;
+}
+
+.third-page .heading h1 {
+  font-family: font-3;
+  font-size: 9vw;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 5%;
+  color: #171818;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10vh;
+  gap: 40px;
+}
+.cards .card-1 {
+  padding: 20px 10px;
+  border: 1px solid black;
+  width: 250px;
+  height: 340px;
+  border-radius: 20px;
+  position: relative;
+  transition: box-shadow 0.3s ease;
+}
+
+.cards .card-1 .heading {
+  font-family: font-1;
+  font-size: 25px;
+  font-weight: 600;
+  padding: 20px 10px;
+  position: absolute;
+}
+.cards .card-1 .desc {
+  padding: 20px 10px;
+  position: absolute;
+  top: 35%;
+}
+.cards .card-1:hover {
+  box-shadow: 10px 10px 5px;
+  cursor: pointer;
+}
+
+.contact-container {
+  overflow: hidden;
+  /* background-color: #f8f9f9; */
+}
+.top-heading {
+  font-family: font-3;
+  text-transform: uppercase;
+  padding: 0% 10%;
+  text-align: center;
+  font-size: 12.5vw;
+  letter-spacing: 7px;
+  color: #171818;
+  background-image: url(../Assests/bg-main.png);
+  background-color: black;
+  background-size: contain;
+  background-position: center;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.contact {
+  height: 90vh;
+  width: 100%;
+  margin-top: 10%;
+  display: flex;
+  padding: 0% 10%;
+  position: relative;
+}
+
+.contact-left {
+  width: 50%;
+  height: 100%;
+  position: relative;
+}
+.contact-left .img-overlay {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+.contact-left .img-overlay img {
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+.overlay-container {
+  position: absolute;
+  top: 15%;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-family: font-5;
+  padding: 10px;
+}
+
+.overlay-container .together {
+  font-size: 3vw;
+  margin-top: 25px;
+  -webkit-text-stroke: 1.5px #191919;
+  color: transparent;
+}
+.overlay-container .upper-last {
+  color: orange;
+  z-index: 5;
+  position: relative;
+}
+
+.overlay-container .work {
+  font-size: 3vw;
+}
+
+.contact-right {
+  width: 50%;
+  height: 100%;
+  position: relative;
+}
+
+.form-container {
+  margin-top: 15vh;
+  padding-left: 15%;
+}
+
+.form-top {
+  display: flex;
+}
+.name,.email {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  margin-right: 5vw;
+}
+.form-top label {
+  font-family: font-4;
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+  padding: 2px 15px;
+  cursor: pointer;
+}
+
+.form-top input {
+  border-radius: 8px;
+  height: 35px;
+  padding:15px 15px;
+  border: transparent;
+  background: transparent;
+  font-family: font-1;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.form-center {
+  padding:2px 15px;
+  margin-top: 5vh;
+}
+.form-center p {
+  font-size: 20px;
+  font-family: font-4;
+  font-weight: 600;
+}
+.checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 15px;
+  border: 1px solid;
+  border-radius: 7px;
+}
+
+.checkbox::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%); 
+  width: 20px;
+  height: 20px; 
+  border: 2px solid #ccc; 
+  background-color: white; 
+  border-radius: 4px;
+  transition: background-color 0.3s ease; 
+  opacity: 0;
+}
+
+.checkbox input[type='checkbox']:checked + label{
+  background-color: orange; /* Background color when checked */
+  border-color: blue; /* Optional: Change border color when checked */
+}
+
+/* Optional: Change label text color when checked */
+.checkbox input[type="checkbox"]:checked + label {
+  color: black; /* Change label text color when checked */
+}
+
+.checkbox input {
+  margin-right: 10px;
+  display: none;
+}
+
+
+.form-center label {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  padding: 20px 25px;
+  border-radius: 7px;
+  font-size: 20px;
+  font-family: font-1;
+  font-weight: 600;
+}
+
+.message {
+  margin-top: 3vh;
+  padding: 0 20px ;
+}
+.message p {
+  font-family: font-1;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.message textarea{
+  width: 100%;
+  height: 15vh;
+  border-radius: 7px;
+}
+
+.btn-container {
+  margin-top: 2.5vh;
+  padding: 20px 25px;
+}
+
+/* DESIGNER BTN CSS CODE */
+.c-button {
+  color: #000;
+  font-weight: 500;
+  font-size: 15px;
+  font-family: font-1;
+  text-decoration: none;
+  padding: 0.9em 1em;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.c-button--gooey {
+  color: #0d0d0e;
+  letter-spacing: 2px;
+  border: 2px solid #050505;
+  border-radius: 0;
+  position: relative;
+  transition: all 700ms ease;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.c-button--gooey .c-button__blobs {
+  height: 100%;
+  filter: url(#goo);
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: -3px;
+  right: -1px;
+  z-index: -1;
+}
+
+.c-button--gooey .c-button__blobs div {
+  background-color: #0e0e0f;
+  width: 34%;
+  height: 100%;
+  border-radius: 100%;
+  position: absolute;
+  transform: scale(1.4) translateY(125%) translateZ(0);
+  transition: all 700ms ease;
+}
+
+.c-button--gooey .c-button__blobs div:nth-child(1) {
+  left: -5%;
+}
+
+.c-button--gooey .c-button__blobs div:nth-child(2) {
+  left: 30%;
+  transition-delay: 60ms;
+}
+
+.c-button--gooey .c-button__blobs div:nth-child(3) {
+  left: 66%;
+  transition-delay: 25ms;
+}
+
+.c-button--gooey:hover {
+  color: #fff;
+}
+
+.c-button--gooey:hover .c-button__blobs div {
+  transform: scale(1.4) translateY(0) translateZ(0);
+}
+
+
+
+
+
+
+.social-link-container{
+  position: absolute;
+  right: 0;
+  height: 40vh;
+  width: 8vh;
+
+}
+
+.social-link  {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+}
+.social-link a {
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+}
+
+/* Show the social link container on second-page-details and next pages */
+.second-page-details ~ .social-link-container {
+  display: block; /* Show when on second-page-details or next pages */
+}
+
+
+
+
+/* ----------Responsive CSS CODE-----------------  */
+
+@media (max-width: 768px) {
+
+  /* --------------NAVBAR----------------- */
+  nav {
+    width: 100vw;
+    padding: 0 50px;
+  }
+  .nav-logo {
+    width: 50%;
+    position: relative;
+  }
+  .nav-logo img {
+    position: absolute;
+    left: -20%;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  nav ul li {
+    display: none;
+  }
+  nav ul .mail-btn {
+    display: none;
+  }
+  .menu-container {
+    display: block;
+  }
+
+  /* ---------------------FirstPage------------------- */
+ 
+  .about-text  h1{
+    font-size: 12rem;
+    font-family: font-3;
+    margin-top: 15vh;
+  }
+  .circle1 {
+    top: 50%;
+    font-size: 1.5rem;
+  }
+  .circle3 ,.circle4{
+    display: block;
+    z-index: 5;
+  }
+
+  .cover-div{
+    bottom: 20%;
+  }
+
+
+  /* -----------------SECOND PAGE---------------- */
+  .second-page-details{
+    height: auto;
+    flex-direction: column;
+    padding: 0%;
+  }
+
+  .leftSide {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0;
+  }
+  .leftSide .imgBox {
+    height: 30vh;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .rightSide{
+    margin-top: 5vh;
+    width: 100%;
+    padding: 0 12%;
+  }
+  .rightSide .desc {
+    font-size: 30px;
+    line-height: normal;
+  }
+  .box-1 {
+    height: 15vh;
+  }
+
+  /* --------------THIRD PAGE-------------- */
+  .third-page {
+    height:auto ;
+    margin-top: 10vh;
+  }
+
+  .third-page .heading h1 {
+    font-size:15vw;
+    height: 10vh;
+  }
+
+  .third-page .cards{
+    padding-top: 5rem;
+  }
+  /* ----------------CONTACT PAGE---------------- */
+  .contact{
+    flex-direction: column;
+    height: 130vh;
+  }
+  .top-heading {
+    margin-top: 2vh;
+    font-size: 14vw;
+    letter-spacing: 5px;
+    padding: 0;
+  }
+
+  .contact-left{
+    width: 100%;
+  }
+  .contact-left .img-overlay {
+    height: 140%;
+  }
+  .contact-left .img-overlay img {
+    top: 1%;
+  }
+  .overlay-container .together{
+    font-size: 7vw;
+  }
+  .overlay-container .work{
+    font-size: 7vw;
+  }
+  .contact-right{
+    width: 100%;
+    margin-top: 10vh;
+
+  }
+  .form-container{
+    padding-left: 0%;
+  }
+}
+
+

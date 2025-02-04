@@ -1,0 +1,457 @@
+@font-face {
+  font-family: "font-1";
+  src: url("./Fonts/font-1.otf");
+}
+@font-face {
+  font-family: "font-2";
+  src: url("./Fonts/font-2.otf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+body, html {
+  overflow-x: hidden;
+}
+
+#main-container {
+
+}
+
+/* CUSTOM CURSOR CODE */
+.cursor {
+  width: 70px;
+  height: 70px;
+  background: white;
+  border: 3px solid #191919;
+  border-radius: 50px;
+  position: absolute;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.29);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+  opacity: 0%;
+  pointer-events: none;
+  transition: smooth;
+}
+.cursor i {
+  font-size: 30px;
+  transform: rotate(-45deg);
+}
+
+/* ---------------Loader CODE--------------------- */
+.loader-wrapper {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 11;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.left-screen, .right-screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .left-screen {
+    background-color: #191919; /* Red color */
+    clip-path: polygon(0 0, 101% 0, 0 101%);
+  }
+  
+  .right-screen {
+    background-color: #191919; /* Blue color */
+    clip-path: polygon(100% 0, 101% 101%, 0 101%);
+  }
+  
+
+.loading-logo {
+    height: 20%;
+    width: 25%;
+    position: absolute;
+    right: 0%;
+    bottom: 10%;
+    overflow: hidden;
+}
+.loading-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* --------------NAVBAR CODE HERE------------------ */
+
+nav {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: font-1;
+  padding: 0 100px;
+  overflow: hidden;
+  position: fixed;
+  z-index: 10;
+}
+
+.nav-logo {
+  width: 20%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-logo img {
+  width: 150%;
+  height: 150%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+nav ul li {
+  font-size: 17px;
+  background: transparent;
+  border: none;
+  padding: 1em 1.5em;
+  text-transform: uppercase;
+  position: relative;
+  transition: 0.5s ease;
+  cursor: pointer;
+  margin-right: 5px;
+  transition-delay: 0.9s ease;
+  border-radius: 10px;
+  height: 50px;
+}
+
+nav ul li::before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #030303;
+  transition: 0.5s ease;
+}
+nav ul li:hover a {
+  color: #1e1e2b;
+  transition-delay: 0.5s;
+}
+
+nav ul li:hover:before {
+  width: 100%;
+}
+nav ul li::after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color: #0c0c0c;
+  border-radius: 5px;
+  transition: 0.4s ease;
+  z-index: -1;
+}
+nav ul li:hover::after {
+  height: 100%;
+  transition-delay: 0.4s;
+  color: aliceblue;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: rgb(31, 31, 31);
+  font-size: 18px;
+  font-weight: 500;
+  transition-delay: 0.9s ease;
+}
+nav ul li:hover a {
+  color: white;
+}
+
+nav a.mail-btn {
+  display: inline-block;
+  width: 150px;
+  height: 50px;
+  background-color: black;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: white;
+  text-decoration: none;
+  border-radius: 7px;
+  transform-origin: center;
+  transition: 0.5s ease;
+
+}
+nav a.mail-btn:hover {
+  transform: scaleX(1.1);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.463);
+}
+
+/* -- ------------------HERO BOX CODE----------------- -- */
+
+.herobox {
+  width: 100%;
+  height: 85.6vh;
+  background-color: white;
+}
+
+.herobox .intro {
+  width: 70%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: font-1;
+  font-size: 27px;
+  margin: auto;
+  margin-bottom: 10px;
+  overflow: hidden;
+  position: absolute;
+  top: 15%;
+  left: 15%;
+}
+.herobox .intro a {
+  text-decoration: none;
+  color: black;
+  opacity: 0;
+}
+.herobox .passion1 {
+  width: 70%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+}
+.herobox .passion1 a {
+  text-decoration: none;
+  font-size: 170px;
+  font-family: font-2;
+  color: rgb(25, 25, 25);
+  -webkit-text-stroke: 1.5px #191919;
+  transition: 0.5s ease;
+}
+
+.herobox .passion2{
+  height: 30%;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+}
+.herobox .passion2 a {
+  font-size: 220px;
+  color: transparent;
+  -webkit-text-stroke: 1.5px #191919;
+  font-family: font-2;
+  text-decoration: none;
+  transition: 0.5s ease;
+}
+.hero-box-img {
+  height: 55%;
+  width: 25%;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translateX(-50%);
+  /* overflow: hidden; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s ease;
+  pointer-events: none;
+}
+.hero-box-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  transition: linear;
+  opacity: 0;
+}
+
+.herobox .passion1_outline {
+  width: 70%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  overflow: hidden;
+}
+.herobox .passion1_outline a {
+  text-decoration: none;
+  font-size: 170px;
+  font-family: font-2;
+  color: transparent;
+  -webkit-text-stroke: 1.5px #fcf9f9;
+  transition: 0.5s ease;
+  pointer-events: none;
+}
+
+.herobox .passion2_outline {
+  height: 35%;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 42.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  pointer-events: none;
+  display: none;
+}
+.herobox .passion2_outline a {
+  font-size: 220px;
+  color: transparent;
+  -webkit-text-stroke: 1.5px #fcf9f9;
+  font-family: font-2;
+  text-decoration: none;
+  transition: 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.herobox p {
+  font-family: font-1;
+  font-size: 30px;
+  position: absolute;
+  bottom: 18%;
+  left: 19%;
+}
+
+/* DESIGNER BTN CSS CODE */
+.c-button {
+  color: #000;
+  font-weight: 500;
+  font-size: 15px;
+  font-family: font-1;
+  text-decoration: none;
+  padding: 0.9em 1em;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  z-index: 1;
+}
+
+.c-button--gooey {
+  color: #0d0d0e;
+  letter-spacing: 2px;
+  border: 2px solid #050505;
+  border-radius: 0;
+  position: relative;
+  transition: all 700ms ease;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.c-button--gooey .c-button__blobs {
+  height: 100%;
+  filter: url(#goo);
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: -3px;
+  right: -1px;
+  z-index: -1;
+}
+
+.c-button--gooey .c-button__blobs div {
+  background-color: #0e0e0f;
+  width: 34%;
+  height: 100%;
+  border-radius: 100%;
+  position: absolute;
+  transform: scale(1.4) translateY(125%) translateZ(0);
+  transition: all 700ms ease;
+}
+
+.c-button--gooey .c-button__blobs div:nth-child(1) {
+  left: -5%;
+}
+
+.c-button--gooey .c-button__blobs div:nth-child(2) {
+  left: 30%;
+  transition-delay: 60ms;
+}
+
+.c-button--gooey .c-button__blobs div:nth-child(3) {
+  left: 66%;
+  transition-delay: 25ms;
+}
+
+.c-button--gooey:hover {
+  color: #fff;
+}
+
+.c-button--gooey:hover .c-button__blobs div {
+  transform: scale(1.4) translateY(0) translateZ(0);
+}
+
+/* .designer-btn {
+  position: absolute;
+  bottom: 5%;
+  left: 36%;
+  overflow: hidden;
+}
+
+.developer-btn {
+  position: absolute;
+  bottom: 5%;
+  right: 36%;
+  overflow: hidden;
+} */
+
+.btn-container {
+  display: flex;
+  position: absolute;
+  width: 50%;
+  bottom: 5%;
+  left: 37%;
+  gap: 3%;
+  overflow: hidden;
+  
+}
+
+
+
+/* -----------------ABOUT_US----------------  */
+#about-us {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+
+}
