@@ -317,19 +317,18 @@ nav a.mail-btn:hover {
   pointer-events: none;
 }
 
-.herobox .passion2_outline {
-  height: 35%;
+.herobox .passion2_outline{
+  height: 30%;
   width: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 42.5%;
+  top: 45%;
   left: 50%;
   transform: translateX(-50%);
   overflow: hidden;
   pointer-events: none;
-  display: none;
 }
 .herobox .passion2_outline a {
   font-size: 220px;
@@ -446,12 +445,3 @@ nav a.mail-btn:hover {
   
 }
 
-
-
-/* -----------------ABOUT_US----------------  */
-#about-us {
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-
-}

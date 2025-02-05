@@ -3,7 +3,7 @@ export function ColorChnageAnimation() {
     var Passion1 = document.querySelector(".herobox .passion1 a");
     var Passion2 = document.querySelector(".herobox .passion2 a");
     var Passion1Outline = document.querySelector(".herobox .passion1_outline a");
-    var Passion2Outline = document.querySelector(".herobox .passion2_outline ");
+    var Passion2Outline = document.querySelector(".herobox .passion2_outline a");
   
     Passion2.addEventListener("mouseenter", function () {
       Passion1.style.color = "transparent";
