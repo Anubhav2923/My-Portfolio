@@ -53,7 +53,7 @@ nav {
   overflow: hidden;
   position: fixed;
   z-index: 10;
-  background: #EAEAEA;
+  background: #eaeaea;
 }
 
 .nav-logo {
@@ -162,7 +162,7 @@ nav a.mail-btn:hover {
   margin-left: 20px;
   display: none;
 }
-.menu-container  input {
+.menu-container input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -238,13 +238,6 @@ nav a.mail-btn:hover {
   opacity: 0;
 }
 
-
-
-
-
-
-
-
 .about-us {
   /* background-color: #f8f9f9; */
 }
@@ -283,7 +276,6 @@ nav a.mail-btn:hover {
   bottom: 0%;
   background-image: url(../Assests/bg-main.png);
   background-color: rgb(255, 255, 255);
-
 }
 .circle1 {
   position: absolute;
@@ -302,32 +294,31 @@ nav a.mail-btn:hover {
   background-image: url(../Assests/goku.png);
   background-position: center;
   background-size: cover;
+  display: none;
 }
 
-.circle3{
+.circle3 {
   position: absolute;
   background-color: #000;
-  top: 14%;
-  left: -20%;
+  top: 6%;
+  left: -15%;
   height: 40vw;
   width: 40vw;
   border-radius: 50%;
-  background-image: url(../Assests/bg-main.png);
+  background-image: url(https://cdn.pixabay.com/photo/2015/09/29/15/12/stars-964022_1280.png);
   display: none;
 }
-.circle4{
+.circle4 {
   position: absolute;
   background-color: #000;
   top: 78%;
-  bottom: 0;
   right: -15%;
   height: 40vw;
   width: 40vw;
   border-radius: 50%;
-  background-image: url(../Assests/bg-main.png);
+  background-image: url(https://cdn.pixabay.com/photo/2015/09/29/15/12/stars-964022_1280.png);
   display: none;
 }
-
 
 .second-page-details {
   width: 100vw;
@@ -405,6 +396,7 @@ nav a.mail-btn:hover {
 
 .tool-container {
   display: flex;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
@@ -416,7 +408,6 @@ nav a.mail-btn:hover {
   border-radius: 10px;
   margin-top: 2vh;
   padding: 10px;
-  margin-right: 2vw;
 }
 .tool-box img {
   height: 100%;
@@ -498,7 +489,7 @@ nav a.mail-btn:hover {
 
 .contact {
   height: 90vh;
-  width: 100%;
+  width: 100vw;
   margin-top: 10%;
   display: flex;
   padding: 0% 10%;
@@ -510,7 +501,7 @@ nav a.mail-btn:hover {
   height: 100%;
   position: relative;
 }
-.contact-left .img-overlay {
+.contact .img-overlay {
   height: 100%;
   width: 100%;
   overflow: hidden;
@@ -530,10 +521,13 @@ nav a.mail-btn:hover {
 }
 .overlay-container {
   position: absolute;
-  top: 15%;
+  top: 0%;
   width: 100%;
   height: 100%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   font-family: font-5;
   padding: 10px;
 }
@@ -568,7 +562,8 @@ nav a.mail-btn:hover {
 .form-top {
   display: flex;
 }
-.name,.email {
+.name,
+.email {
   display: flex;
   flex-direction: column;
   font-weight: 600;
@@ -585,16 +580,17 @@ nav a.mail-btn:hover {
 .form-top input {
   border-radius: 8px;
   height: 35px;
-  padding:15px 15px;
+  padding: 20px 15px;
   border: transparent;
   background: transparent;
   font-family: font-1;
   font-size: 20px;
   font-weight: 600;
+  outline: none;
 }
 
 .form-center {
-  padding:2px 15px;
+  padding: 2px 15px;
   margin-top: 5vh;
 }
 .form-center p {
@@ -618,21 +614,21 @@ nav a.mail-btn:hover {
 }
 
 .checkbox::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 50%;
-  transform: translateY(-50%); 
+  transform: translateY(-50%);
   width: 20px;
-  height: 20px; 
-  border: 2px solid #ccc; 
-  background-color: white; 
+  height: 20px;
+  border: 2px solid #ccc;
+  background-color: white;
   border-radius: 4px;
-  transition: background-color 0.3s ease; 
+  transition: background-color 0.3s ease;
   opacity: 0;
 }
 
-.checkbox input[type='checkbox']:checked + label{
+.checkbox input[type="checkbox"]:checked + label {
   background-color: orange; /* Background color when checked */
   border-color: blue; /* Optional: Change border color when checked */
 }
@@ -647,7 +643,6 @@ nav a.mail-btn:hover {
   display: none;
 }
 
-
 .form-center label {
   height: 35px;
   display: flex;
@@ -661,7 +656,7 @@ nav a.mail-btn:hover {
 
 .message {
   margin-top: 3vh;
-  padding: 0 20px ;
+  padding: 0 20px;
 }
 .message p {
   font-family: font-1;
@@ -670,10 +665,11 @@ nav a.mail-btn:hover {
   margin-bottom: 10px;
 }
 
-.message textarea{
+.message textarea {
   width: 100%;
   height: 15vh;
   border-radius: 7px;
+  padding: 20px;
 }
 
 .btn-container {
@@ -752,20 +748,14 @@ nav a.mail-btn:hover {
   transform: scale(1.4) translateY(0) translateZ(0);
 }
 
-
-
-
-
-
-.social-link-container{
+.social-link-container {
   position: absolute;
   right: 0;
   height: 40vh;
   width: 8vh;
-
 }
 
-.social-link  {
+.social-link {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -783,17 +773,14 @@ nav a.mail-btn:hover {
   display: block; /* Show when on second-page-details or next pages */
 }
 
-
-
-
 /* ----------Responsive CSS CODE-----------------  */
 
 @media (max-width: 768px) {
-
   /* --------------NAVBAR----------------- */
   nav {
     width: 100vw;
-    padding: 0 50px;
+    padding: 0 30px;
+    height: 100px;
   }
   .nav-logo {
     width: 50%;
@@ -817,8 +804,8 @@ nav a.mail-btn:hover {
   }
 
   /* ---------------------FirstPage------------------- */
- 
-  .about-text  h1{
+
+  .about-text h1 {
     font-size: 12rem;
     font-family: font-3;
     margin-top: 15vh;
@@ -827,18 +814,20 @@ nav a.mail-btn:hover {
     top: 50%;
     font-size: 1.5rem;
   }
-  .circle3 ,.circle4{
+  .circle2 {
+  }
+  .circle3,
+  .circle4 {
     display: block;
     z-index: 5;
   }
 
-  .cover-div{
+  .cover-div {
     bottom: 20%;
   }
 
-
   /* -----------------SECOND PAGE---------------- */
-  .second-page-details{
+  .second-page-details {
     height: auto;
     flex-direction: column;
     padding: 0%;
@@ -860,7 +849,7 @@ nav a.mail-btn:hover {
     margin: 0;
   }
 
-  .rightSide{
+  .rightSide {
     margin-top: 5vh;
     width: 100%;
     padding: 0 12%;
@@ -870,58 +859,134 @@ nav a.mail-btn:hover {
     line-height: normal;
   }
   .box-1 {
-    height: 15vh;
+    height: 20vh;
   }
 
   /* --------------THIRD PAGE-------------- */
   .third-page {
-    height:auto ;
+    height: auto;
     margin-top: 10vh;
   }
 
   .third-page .heading h1 {
-    font-size:15vw;
+    font-size: 15vw;
     height: 10vh;
   }
 
-  .third-page .cards{
+  .third-page .cards {
     padding-top: 5rem;
   }
   /* ----------------CONTACT PAGE---------------- */
-  .contact{
+  .contact {
     flex-direction: column;
-    height: 130vh;
+    height: 120vh;
   }
   .top-heading {
     margin-top: 2vh;
+    margin-bottom: 2vh;
     font-size: 14vw;
     letter-spacing: 5px;
     padding: 0;
   }
 
-  .contact-left{
+  .contact-left {
     width: 100%;
   }
   .contact-left .img-overlay {
-    height: 140%;
   }
   .contact-left .img-overlay img {
     top: 1%;
   }
-  .overlay-container .together{
+  .overlay-container .together {
     font-size: 7vw;
   }
-  .overlay-container .work{
+  .overlay-container .work {
     font-size: 7vw;
   }
-  .contact-right{
+  .contact-right {
     width: 100%;
-    margin-top: 10vh;
-
+    margin-top: 0vh;
   }
-  .form-container{
+  .form-container {
     padding-left: 0%;
   }
 }
 
+@media (max-width: 425px) {
+  nav {
+    height: 60px;
+  }
 
+  /* --------FIRST PAGE----------- */
+
+  .circle1{
+    width: 100%;
+    top: 40%;
+    left: 0;
+    padding: 8%;
+    font-size: 1rem;
+  }
+  .about-text h1 {
+    font-size: 6rem;
+  }
+  .cover-div {
+    bottom:25% ;
+  }
+
+  /* ----------------SECOND PAGE----------- */
+
+  .second-page-details {
+    margin-bottom: 20vh;
+  }
+  .rightSide {
+    padding: 0 2%;
+  } 
+  .rightSide .desc {
+    font-size: 20px;
+    padding: 0 5%;
+  }
+  .tool-container {
+    align-items: center;
+    justify-content: center;
+  }
+  .tools-use p {
+    padding: 0 2%;
+  }
+  .boxes {
+    padding: 0% 5%;
+  }
+  .box-1 {
+    height: 20vh;
+  }
+  .remove-box {
+    display: none;
+  }
+
+
+  /* ----------CONTACT PAGE---------- */
+  .contact{
+    height: 170vh;
+    width: 100vw;
+  }
+  .top-heading {
+    font-size: 20vw;
+    width: 100%;
+    margin-bottom: -10vh;
+  }
+  .contact-left{
+    height: 100%;
+  }
+  .contact-right{
+    margin-top: 0;
+  }
+  .form-container {
+    margin-top: 0vh;
+  }
+  .form-top{
+    flex-direction: column;
+  }
+
+  .form-center label{
+    font-size: 15px;
+  }
+}
